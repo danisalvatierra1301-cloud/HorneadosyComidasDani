@@ -245,6 +245,15 @@
             text-transform: uppercase;
         }
 
+        .product-card.no-image .product-badge {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 0 auto 16px auto;
+            display: inline-block;
+            width: fit-content;
+        }
+
         .product-icon-wrapper {
             width: 80px;
             height: 80px;
@@ -716,7 +725,7 @@
     </div>
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/59162477516?text=Hola!%20Me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20empanadas." class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/59178142994?text=Hola!%20Me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20empanadas." class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.455L0 24zm6.59-4.846c1.6.95 3.197 1.451 4.811 1.452 5.518 0 10.011-4.493 10.014-10.011.002-2.673-1.04-5.184-2.936-7.082C16.64 1.616 14.128.574 11.46.574 5.933.574 1.44 5.067 1.438 10.593c-.001 1.748.465 3.453 1.348 4.965l-.997 3.642 3.731-.978l1.127.668z"/>
         </svg>
@@ -729,7 +738,7 @@
         <div class="container">
             <h4>Horneados & Comidas Dani</h4>
             <p>📍 Barrio Amboró, Calle Beni, Bolivia</p>
-            <p>📞 Teléfono/WhatsApp: <a href="tel:62477516" style="color: inherit; text-decoration: none;">62477516</a></p>
+            <p>📞 Teléfono/WhatsApp: <a href="tel:78142994" style="color: inherit; text-decoration: none;">78142994</a></p>
             <p>⏰ Lunes a Viernes de 8:00 AM a 8:00 PM</p>
             <div class="copyright">
                 <p>&copy; 2026 Horneados & Comidas Dani. Todos los derechos reservados.</p>
@@ -768,21 +777,21 @@
                 name: "Empanadas de Pollo",
                 price: 4.00,
                 badge: "Clásica",
-                image: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=600&auto=format&fit=crop"
+                image: ""
             },
             {
                 id: "keperi_horno",
                 name: "Keperí al Horno",
                 price: 20.00,
                 badge: "Al Horno",
-                image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop"
+                image: ""
             },
             {
                 id: "cordon_blue",
                 name: "Cordon Bleu de Pollo",
                 price: 20.00,
                 badge: "Destacado",
-                image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=600&auto=format&fit=crop"
+                image: ""
             }
         ];
 
@@ -814,11 +823,12 @@
         function renderCatalog() {
             if (!productsGrid) return;
             productsGrid.innerHTML = products.map(product => `
-                <div class="product-card">
+                <div class="product-card${product.image ? "" : " no-image"}">
                     ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ""}
+                    ${product.image ? `
                     <div class="product-image-container">
                         <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
-                    </div>
+                    </div>` : ""}
                     <div class="product-info">
                         <h3 class="product-name">${product.name}</h3>
                         <div class="product-price">${product.price.toFixed(2)} Bs</div>
@@ -904,9 +914,10 @@
 
             cartItemsContainer.innerHTML = cart.map(item => `
                 <div class="cart-item">
+                    ${item.image ? `
                     <div style="width: 60px; height: 60px; border-radius: 12px; overflow: hidden; background-color: var(--gray-100); flex-shrink: 0;">
                         <img src="${item.image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
+                    </div>` : ""}
                     <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
                         <div class="cart-item-price">${(item.price * item.quantity).toFixed(2)} Bs</div>
@@ -987,7 +998,7 @@
             checkoutBtn.addEventListener("click", () => {
                 if (cart.length === 0) return;
 
-                const phone = "59162477516";
+                const phone = "59178142994";
                 let message = "*¡Hola, Horneados & Comidas Dani!* 👋\n\nMe gustaría realizar el siguiente pedido:\n\n";
 
                 cart.forEach((item, index) => {
