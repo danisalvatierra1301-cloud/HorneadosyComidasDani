@@ -14,11 +14,14 @@ Nuestro diferencial principal es: [Diferencial].
 Enlaces clave: [Links].
 
 # INSTRUCCIONES COMPLEMENTARIAS
-PRODUCTO; empanadas de pollo,empanadas de queso,empanadas de carne,empanadas arabes,keperi al horno y cordon blue de pollo 
+PRODUCTO; empanadas de pollo,empanadas de queso,empanadas de carne,empanadas arabes,keperi al horno,cordon blue de pollo,cuñape,cuñape frito y keperi al horno con arroz batido
 SERVICIOS;para todo tipo de acontecimientos,cumpleaños,fietsas,tambien hacemos envios
 HORARIOS DE ATENCION; de lunes a viernes de 8am a 8pm
 PRECIOS;empanadas cualquiera a 4bs 
 keperi y cordon blue a 20bs
+cuñape a 4bs
+cuñape frito a 4bs
+keperi al horno con arroz batido a 25bs
 DIRECCION/UBICACION; barrio amboro calle beni 
 https://maps.app.goo.gl/FvB9S97r4H4ceLZk7
 NUMERO DE CONTACTO; 78142994
